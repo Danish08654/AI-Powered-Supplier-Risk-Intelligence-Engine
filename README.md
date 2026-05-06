@@ -1,12 +1,12 @@
 #  AI-Powered Supplier Risk Intelligence Engine
 
-A forward-looking risk prediction system that analyzes **31 multi-dimensional signals** across news, finance, operations, climate, and geopolitics — to predict supplier disruption probability **3–6 months in advance**.
+A forward-looking risk prediction system that analyzes **31 multi-dimensional signals** across news, finance, operations, climate, and geopolitics to predict supplier disruption probability **3–6 months in advance**.
 
 ---
 
 ##  The Problem
 
-Supply chain disruptions don’t happen randomly — they build up through weak signals:
+Supply chain disruptions don’t happen randomly they build up through weak signals:
 
 * Negative news sentiment
 * Financial stress indicators
