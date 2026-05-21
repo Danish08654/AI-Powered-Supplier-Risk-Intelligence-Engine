@@ -1,6 +1,6 @@
 #  AI-Powered Supplier Risk Intelligence Engine
 
-A forward-looking risk prediction system that analyzes **31 multi-dimensional signals** across news, finance, operations, climate, and geopolitics to predict supplier disruption probability **3–6 months in advance**.
+A risk prediction system that analyzes **31 multi-dimensional signals** across news, finance, operations, climate, and geopolitics to predict supplier disruption probability **3–6 months in advance**.
 
 ---
 
@@ -24,12 +24,15 @@ Yet most companies:
 
 ##  The Solution
 
-This system transforms supplier risk management from **reactive → predictive**:
+This system transforms supplier risk management from reactive → predictive:
 
 👉 Continuously ingests multi-source signals
+
 👉 Scores supplier risk in real-time
+
 👉 Predicts disruption probability months ahead
-👉 Generates a full **risk scorecard per supplier**
+
+👉 Generates a full risk scorecard per supplier
 
 ---
 
@@ -162,6 +165,6 @@ Each supplier includes:
 ##  Author
 
 **Danish Zulfiqar**
-AI / ML Engineer | Predictive Systems | Applied AI
+AI / ML Engineer 
 
 ---
