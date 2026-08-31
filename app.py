@@ -107,7 +107,7 @@ Return exactly:
 Tier: Critical>=0.70, High>=0.50, Medium>=0.30, Low<0.30. Monitoring: Critical=Daily, High=Weekly, else Monthly."""
 
     raw = client.chat.completions.create(
-        model="llama-3.1-8b-instant",
+        model="openai/gpt-oss-20b",
         messages=[{"role":"system","content":system},{"role":"user","content":user}],
         temperature=0.1, max_tokens=1200
     ).choices[0].message.content
