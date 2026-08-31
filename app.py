@@ -51,13 +51,19 @@ def get_client():
 
 def parse_json(raw: str) -> dict:
     raw = raw.strip()
+    # strip <think>...</think> blocks (Qwen reasoning tokens)
+    import re
+    raw = re.sub(r"<think>.*?</think>", "", raw, flags=re.DOTALL).strip()
+    # strip markdown fences
     if "```" in raw:
         parts = raw.split("```")
         for part in parts:
             part = part.lstrip("json").strip()
             if part.startswith("{"): raw = part; break
+    # extract first valid JSON object
     s, e = raw.find("{"), raw.rfind("}")
-    if s != -1 and e != -1: raw = raw[s:e+1]
+    if s != -1 and e != -1:
+        raw = raw[s:e+1]
     return json.loads(raw)
 
 def assess(p: dict) -> dict:
@@ -101,7 +107,7 @@ Return exactly:
 Tier: Critical>=0.70, High>=0.50, Medium>=0.30, Low<0.30. Monitoring: Critical=Daily, High=Weekly, else Monthly."""
 
     raw = client.chat.completions.create(
-        model="qwen/qwen3.6-27b",
+        model="llama-3.1-8b-instant",
         messages=[{"role":"system","content":system},{"role":"user","content":user}],
         temperature=0.1, max_tokens=1200
     ).choices[0].message.content
@@ -117,7 +123,7 @@ def metric_card(label, value, color="#0f172a"):
 
 
 # ── header ──
-st.markdown("## Supplier Risk Intelligence System")
+st.markdown("## ⚠️ Supplier Risk Intelligence System")
 st.caption("AI-powered supply chain disruption analysis · Powered by Groq")
 st.divider()
 
@@ -173,7 +179,7 @@ with tab1:
         nat_disaster = st.checkbox("Natural Disaster Reported", False, key="nat")
 
         st.markdown("<br>", unsafe_allow_html=True)
-        assess_btn = st.button(" Assess Supplier Risk", use_container_width=True, key="assess")
+        assess_btn = st.button("⚠️ Assess Supplier Risk", use_container_width=True, key="assess")
 
     with col_result:
         if assess_btn:
