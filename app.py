@@ -117,7 +117,7 @@ def metric_card(label, value, color="#0f172a"):
 
 
 # ── header ──
-st.markdown("## ⚠️ Supplier Risk Intelligence System")
+st.markdown("## Supplier Risk Intelligence System")
 st.caption("AI-powered supply chain disruption analysis · Powered by Groq")
 st.divider()
 
@@ -173,7 +173,7 @@ with tab1:
         nat_disaster = st.checkbox("Natural Disaster Reported", False, key="nat")
 
         st.markdown("<br>", unsafe_allow_html=True)
-        assess_btn = st.button("⚠️ Assess Supplier Risk", use_container_width=True, key="assess")
+        assess_btn = st.button(" Assess Supplier Risk", use_container_width=True, key="assess")
 
     with col_result:
         if assess_btn:
